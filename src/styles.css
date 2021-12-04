@@ -1,0 +1,52 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #121212;
+  color: #fff;
+}
+.App {
+  height: 100%;
+  overflow: hidden;
+}
+.h-70 {
+  height: 70% !important;
+}
+.h-100 {
+  height: 100% !important;
+}
+.px-5 {
+  padding: 0px 30px;
+}
+.ant-card-body {
+  padding: 13px;
+}
+.pr-3 {
+  padding-right: 10px;
+}
+.ps-3 {
+  padding-left: 3px;
+}
+.pr-2 {
+  padding-right: 5px;
+}
+.pb-3 {
+  padding-bottom: 5px;
+}
+table {
+  margin-top: 10px;
+  width: 50%;
+  text-align: center;
+}
+tr {
+  border: 1px solid lightgrey;
+}
+td,
+th {
+  border-right: 1px solid lightgrey;
+}
+.border-bottom {
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,15 @@
+.header {
+  height: 45px;
+  width: 100%;
+  color: #fff;
+  background-color: #6200ee;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.text {
+  color: #fff;
+  margin-right: 20px;
+}

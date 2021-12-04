@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Col, Row } from 'antd';
+import Currency from 'components/Currency';
+import Details from 'components/Details';
+import Header from 'components/Header';
+import Map from 'components/Map';
+import { useEffect } from 'react';
 
 function App() {
+  const [center, setCenter] = useState();
+
+  useEffect(() => {
+    navigator?.geolocation.getCurrentPosition(
+      ({ coords: { latitude: lat, longitude: lng } }) => {
+        setCenter({ lat, lng });
+      }
+    );
+  }, []);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Row className="h-100 px-5">
+        <Col span={6}>
+          <Details center={center} />
+        </Col>
+        <Col span={18} className="h-100">
+          <Row className="h-70">
+            <Map center={center} />
+          </Row>
+          <Row>
+            <Currency />
+          </Row>
+        </Col>
+      </Row>
     </div>
   );
 }
